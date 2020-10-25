@@ -56,6 +56,7 @@ public class RomanNumberTest {
     public void romanNumeralAddition() throws Exception {
         assertEquals(2, RomanNumber.convertToArabicNumber("II"));
         assertEquals(3, RomanNumber.convertToArabicNumber("III"));
+        assertEquals(6, RomanNumber.convertToArabicNumber("VI"));
     }
 
 }
