@@ -58,6 +58,13 @@ public class RomanNumberTest {
         assertEquals(10, RomanNumber.convertToArabicNumber("X"));
     }
 
+    @Test()
+    public void convertStringToArrayDigits() throws Exception {
+        assertEquals(2, RomanNumber.additionDigits("II"));
+        assertEquals(3, RomanNumber.additionDigits("III"));
+        assertEquals(8, RomanNumber.additionDigits("VIII"));
+    }
+
 
 
 }
