@@ -10,6 +10,9 @@ public class RomanNumber {
         } else if (romanNumber.equals("X")) {
             return 10;
         }
+        else if (romanNumber.equals("II")) {
+            return 2;
+        }
         throw new  Exception("the number do not exist");
     }
 
