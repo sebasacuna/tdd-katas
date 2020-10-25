@@ -7,6 +7,8 @@ public class RomanNumber {
             return 1;
         } else if (romanNumber.equals("V")) {
             return 5;
+        } else if (romanNumber.equals("X")) {
+            return 10;
         }
         throw new  Exception("the number do not exist");
     }

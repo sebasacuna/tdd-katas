@@ -29,7 +29,7 @@ public class RomanNumberTest {
     @Test
     public void convertTenRomanNumberToArabicNumber() throws Exception {
         final int arabicNumber = RomanNumber.convertToArabicNumber("X");
-        assertEquals(5, arabicNumber);
+        assertEquals(10, arabicNumber);
     }
 
     @Test()
