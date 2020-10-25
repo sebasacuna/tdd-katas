@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class RomanNumberTest {
 
     @Test
-    public void junitWorks(){
+    public void junitWorks() {
         assertTrue(true);
     }
 
     @Test
-    public void convertSingleDigitRoman(){
+    public void convertSingleDigitRoman() {
         final int arabicNumber = RomanNumber.convertToArabicNumber("I");
-        assertEquals(1,arabicNumber);
+        assertEquals(1, arabicNumber);
     }
 
 }
