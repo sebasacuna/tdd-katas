@@ -5,13 +5,14 @@ public class RomanNumber {
     public static int convertToArabicNumber(String romanNumber) throws Exception {
         if (romanNumber.length() == 1) {
             return convertSingleDigitToArabicNumber(romanNumber);
-        }
-        if (romanNumber.equals("II")) {
-            return 2;
-        } else if (romanNumber.equals("III")) {
-            return 3;
-        } else if (romanNumber.equals("VI")) {
-            return 6;
+        } else if (romanNumber.length() > 1) {
+            if (romanNumber.equals("II")) {
+                return 2;
+            } else if (romanNumber.equals("III")) {
+                return 3;
+            } else if (romanNumber.equals("VI")) {
+                return 6;
+            }
         }
         throw new Exception("the number do not exist");
     }
