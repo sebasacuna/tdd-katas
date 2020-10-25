@@ -12,7 +12,7 @@ public class RomanNumber {
         } else if (romanNumber.length() > 1) {
             return additionDigits(romanNumber);
         }
-        throw new Exception("the number do not exist");
+        return 0;
     }
 
     public static int additionDigits(String romanNumber) throws Exception {
