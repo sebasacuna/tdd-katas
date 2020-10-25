@@ -29,9 +29,14 @@ public class RomanNumberTest {
         assertEquals(10, RomanNumber.convertToArabicNumber("X"));
     }
 
+    @Test
+    public void convertSixRomanNumberToArabicNumber() throws Exception {
+        assertEquals(3, RomanNumber.convertToArabicNumber("VI"));
+    }
+
     @Test()
     public void convertWrongRomanNumberToArabicNumber() {
-        Assertions.assertThrows(Exception.class, () -> RomanNumber.convertToArabicNumber("L"));
+        Assertions.assertThrows(Exception.class, () -> RomanNumber.convertToArabicNumber("U"));
 
     }
 
