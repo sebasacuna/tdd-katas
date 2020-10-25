@@ -45,14 +45,12 @@ public class RomanNumberTest {
     @Test()
     public void convertRomanNumbersWithOneDigits() throws Exception {
         assertEquals(1, RomanNumber.convertToArabicNumber("I"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("V"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("X"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("V"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("X"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("L"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("C"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("D"));
-        assertEquals(1, RomanNumber.convertToArabicNumber("M"));
+        assertEquals(5, RomanNumber.convertToArabicNumber("V"));
+        assertEquals(100, RomanNumber.convertToArabicNumber("C"));
+        assertEquals(500, RomanNumber.convertToArabicNumber("D"));
+        assertEquals(50, RomanNumber.convertToArabicNumber("L"));
+        assertEquals(1000, RomanNumber.convertToArabicNumber("M"));
+        assertEquals(10, RomanNumber.convertToArabicNumber("X"));
     }
 
 
