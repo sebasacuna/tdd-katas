@@ -18,7 +18,7 @@ public class RomanNumberTest {
         assertEquals(1,arabicNumber);
     }
 
-    private int convert(String romanNumber) {
+    private static int convert(String romanNumber) {
         return 1;
     }
 
