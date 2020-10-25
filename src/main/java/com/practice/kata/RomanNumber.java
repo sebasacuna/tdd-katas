@@ -13,6 +13,8 @@ public class RomanNumber {
             return 2;
         } else if (romanNumber.equals("III")) {
             return 3;
+        } else if (romanNumber.equals("VI")) {
+            return 6;
         }
         throw new Exception("the number do not exist");
     }
