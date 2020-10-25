@@ -14,9 +14,15 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void convertSingleDigitRoman() {
+    public void convertOneRomanNumberToArabicNumber() {
         final int arabicNumber = RomanNumber.convertToArabicNumber("I");
         assertEquals(1, arabicNumber);
+    }
+
+    @Test
+    public void convertFiveRomanNumberToArabicNumber() {
+        final int arabicNumber = RomanNumber.convertToArabicNumber("V");
+        assertEquals(5, arabicNumber);
     }
 
 }
