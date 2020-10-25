@@ -14,15 +14,11 @@ public class RomanNumberTest {
 
     @Test
     public void convertSingleDigitRoman(){
-        /*
-         the code will not compile, in consequence the test will fail that it is
-         good because indicate that the feature not exist yet
-        */
-        final int arabic = convert("I");
-        assertEquals(1,arabic);
+        final int arabicNumber = convert("I");
+        assertEquals(1,arabicNumber);
     }
 
-    private int convert(String i) {
+    private int convert(String romanNumber) {
         return 1;
     }
 
