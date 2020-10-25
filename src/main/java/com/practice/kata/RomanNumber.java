@@ -9,11 +9,12 @@ public class RomanNumber {
             return 5;
         } else if (romanNumber.equals("X")) {
             return 10;
-        }
-        else if (romanNumber.equals("II")) {
+        } else if (romanNumber.equals("II")) {
+            return 2;
+        } else if (romanNumber.equals("III")) {
             return 2;
         }
-        throw new  Exception("the number do not exist");
+        throw new Exception("the number do not exist");
     }
 
 }
