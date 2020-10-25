@@ -8,7 +8,7 @@ public class RomanNumberTest {
 
     @Test
     public void junitWorks(){
-        assertTrue(false);
+        assertTrue(true);
     }
 
 }
