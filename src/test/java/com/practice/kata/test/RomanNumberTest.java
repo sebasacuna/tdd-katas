@@ -1,5 +1,6 @@
 package com.practice.kata.test;
 
+import com.practice.kata.RomanNumber;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,12 +15,8 @@ public class RomanNumberTest {
 
     @Test
     public void convertSingleDigitRoman(){
-        final int arabicNumber = convert("I");
+        final int arabicNumber = RomanNumber.convert("I");
         assertEquals(1,arabicNumber);
-    }
-
-    private static int convert(String romanNumber) {
-        return 1;
     }
 
 }
