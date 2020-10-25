@@ -12,7 +12,7 @@ public class RomanNumber {
         } else if (romanNumber.equals("II")) {
             return 2;
         } else if (romanNumber.equals("III")) {
-            return 2;
+            return 3;
         }
         throw new Exception("the number do not exist");
     }
