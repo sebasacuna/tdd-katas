@@ -2,6 +2,7 @@ package com.practice.kata;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class RomanNumber {
@@ -16,13 +17,37 @@ public class RomanNumber {
     }
 
     public static int operateDigit(String romanNumber) throws Exception {
-        List<String> separateRomanNumber = new ArrayList<String>(Arrays.asList(romanNumber.split("")));
+        LinkedList<String> separateRomanNumber = new LinkedList<String>(Arrays.asList(romanNumber.split("")));
         int arabicNumber = 0;
-        int sum = 0;
-        for (int index = 0; index < separateRomanNumber.size(); index++) {
-            arabicNumber += convertSingleDigitToArabicNumber(separateRomanNumber.get(index));;
+        int firstNumber = 0;
+        int secondNumber = 0;
+        while (separateRomanNumber.size() != 0){
+            firstNumber = 0;
+            secondNumber = 0;
+            if(separateRomanNumber.size() == 1){
+                firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
+                arabicNumber+= (firstNumber + secondNumber);
+                break;
+            }
+            firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
+            if(separateRomanNumber != null){
+                secondNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
+            }
+            if (firstNumber >= secondNumber) {
+                arabicNumber+= (firstNumber + secondNumber);
+            }else {
+                arabicNumber+= Math.abs(firstNumber - secondNumber);
+            }
         }
         return arabicNumber;
+    }
+
+    private static boolean isValid(List<String> separateRomanNumber, int index) throws Exception {
+        if ((index + 1 < separateRomanNumber.size())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private static int convertSingleDigitToArabicNumber(String romanNumber) throws Exception {

@@ -67,8 +67,20 @@ public class RomanNumberTest {
 
     @Test()
     public void operateRomanDigitsToForceSubtractOperation() throws Exception {
-        assertEquals(2, RomanNumber.operateDigit("IV"));
-        assertEquals(3, RomanNumber.operateDigit("IX"));
+        assertEquals(4, RomanNumber.operateDigit("IV"));
+        assertEquals(9, RomanNumber.operateDigit("IX"));
+    }
+
+    @Test()
+    public void operateComplexRomanNumbers() throws Exception {
+        assertEquals(40, RomanNumber.operateDigit("XL"));
+        assertEquals(27, RomanNumber.operateDigit("XXVII"));
+        assertEquals(49, RomanNumber.operateDigit("XLIX"));
+        assertEquals(65, RomanNumber.operateDigit("LXV"));
+        assertEquals(24, RomanNumber.operateDigit("XXIV"));
+        assertEquals(24, RomanNumber.operateDigit("XXIV"));
+        assertEquals(24, RomanNumber.operateDigit("XXIV"));
+        assertEquals(38, RomanNumber.operateDigit("XXXVIII"));
     }
 
 
