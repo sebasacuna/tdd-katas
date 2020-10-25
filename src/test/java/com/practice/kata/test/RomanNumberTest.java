@@ -31,7 +31,7 @@ public class RomanNumberTest {
 
     @Test
     public void convertSixRomanNumberToArabicNumber() throws Exception {
-        assertEquals(3, RomanNumber.convertToArabicNumber("VI"));
+        assertEquals(6, RomanNumber.convertToArabicNumber("VI"));
     }
 
     @Test()
