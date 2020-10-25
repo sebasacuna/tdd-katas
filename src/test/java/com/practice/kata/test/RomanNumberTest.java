@@ -22,4 +22,8 @@ public class RomanNumberTest {
         assertEquals(1,arabic);
     }
 
+    private int convert(String i) {
+        return 1;
+    }
+
 }
