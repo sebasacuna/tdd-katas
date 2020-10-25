@@ -16,27 +16,23 @@ public class RomanNumberTest {
 
     @Test
     public void convertOneRomanNumberToArabicNumber() throws Exception {
-        final int arabicNumber = RomanNumber.convertToArabicNumber("I");
-        assertEquals(1, arabicNumber);
+        assertEquals(1, RomanNumber.convertToArabicNumber("I"));
     }
 
     @Test
     public void convertFiveRomanNumberToArabicNumber() throws Exception {
-        final int arabicNumber = RomanNumber.convertToArabicNumber("V");
-        assertEquals(5, arabicNumber);
+        assertEquals(5, RomanNumber.convertToArabicNumber("V"));
     }
 
     @Test
     public void convertTenRomanNumberToArabicNumber() throws Exception {
-        final int arabicNumber = RomanNumber.convertToArabicNumber("X");
-        assertEquals(10, arabicNumber);
+        assertEquals(10, RomanNumber.convertToArabicNumber("X"));
     }
 
     @Test()
     public void convertWrongRomanNumberToArabicNumber() {
-        Assertions.assertThrows(Exception.class, () -> {
-            RomanNumber.convertToArabicNumber("L");
-        });
+        Assertions.assertThrows(Exception.class, () -> RomanNumber.convertToArabicNumber("L") );
+
     }
 
 }
