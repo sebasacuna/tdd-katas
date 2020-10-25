@@ -60,9 +60,15 @@ public class RomanNumberTest {
 
     @Test()
     public void convertStringToArrayDigits() throws Exception {
-        assertEquals(2, RomanNumber.additionDigits("II"));
-        assertEquals(3, RomanNumber.additionDigits("III"));
-        assertEquals(8, RomanNumber.additionDigits("VIII"));
+        assertEquals(2, RomanNumber.operateDigit("II"));
+        assertEquals(3, RomanNumber.operateDigit("III"));
+        assertEquals(8, RomanNumber.operateDigit("VIII"));
+    }
+
+    @Test()
+    public void operateRomanDigitsToForceSubtractOperation() throws Exception {
+        assertEquals(2, RomanNumber.operateDigit("IV"));
+        assertEquals(3, RomanNumber.operateDigit("IX"));
     }
 
 

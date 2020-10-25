@@ -10,12 +10,12 @@ public class RomanNumber {
         if (romanNumber.length() == 1) {
             return convertSingleDigitToArabicNumber(romanNumber);
         } else if (romanNumber.length() > 1) {
-            return additionDigits(romanNumber);
+            return operateDigit(romanNumber);
         }
         return 0;
     }
 
-    public static int additionDigits(String romanNumber) throws Exception {
+    public static int operateDigit(String romanNumber) throws Exception {
         List<String> separateRomanNumber = new ArrayList<String>(Arrays.asList(romanNumber.split("")));
         int arabicNumber = 0;
         int sum = 0;
