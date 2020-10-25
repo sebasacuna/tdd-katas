@@ -26,12 +26,17 @@ public class RomanNumberTest {
         assertEquals(5, arabicNumber);
     }
 
+    @Test
+    public void convertTenRomanNumberToArabicNumber() throws Exception {
+        final int arabicNumber = RomanNumber.convertToArabicNumber("X");
+        assertEquals(5, arabicNumber);
+    }
+
     @Test()
     public void convertWrongRomanNumberToArabicNumber() {
         Assertions.assertThrows(Exception.class, () -> {
             RomanNumber.convertToArabicNumber("L");
         });
-
     }
 
 }
