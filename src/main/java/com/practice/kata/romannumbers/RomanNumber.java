@@ -1,11 +1,17 @@
-package com.practice.kata;
+package com.practice.kata.romannumbers;
+
+import com.practice.kata.romannumbers.exceptions.RomanNumberDoNotExist;
+import com.practice.kata.romannumbers.exceptions.RomanNumberOperationDoNotExist;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 
 public class RomanNumber {
 
-    public static int convertToArabicNumber(String romanNumber) throws Exception {
+    private RomanNumber() {
+    }
+
+    public static int convertToArabicNumber(String romanNumber) throws RomanNumberDoNotExist, RomanNumberOperationDoNotExist {
         if (romanNumber.length() == 1) {
             return convertSingleDigitToArabicNumber(romanNumber);
         } else if (romanNumber.length() > 1) {
@@ -14,10 +20,10 @@ public class RomanNumber {
         return 0;
     }
 
-    public static int operateDigit(String romanNumber) throws Exception {
+    public static int operateDigit(String romanNumber) throws RomanNumberDoNotExist, RomanNumberOperationDoNotExist {
         LinkedList<String> separateRomanNumber = romanNumberToLinkedList(romanNumber);
         int arabicNumber = 0;
-        while (separateRomanNumber.size() != 0) {
+        while (!separateRomanNumber.isEmpty()) {
             int firstNumber = 0;
             int secondNumber = 0;
             if (separateRomanNumber.size() == 1) {
@@ -26,7 +32,7 @@ public class RomanNumber {
                 break;
             }
             firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
-            if (separateRomanNumber != null) {
+            if (!separateRomanNumber.isEmpty()) {
                 secondNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
             }
             if (firstNumber >= secondNumber) {
@@ -39,10 +45,10 @@ public class RomanNumber {
     }
 
     private static LinkedList<String> romanNumberToLinkedList(String romanNumber) {
-        return new LinkedList<String>(Arrays.asList(romanNumber.split("")));
+        return new LinkedList<>(Arrays.asList(romanNumber.split("")));
     }
 
-    private static int operateArabicNumber(int arabicNumber, int firstNumber, int secondNumber, String operation) {
+    private static int operateArabicNumber(int arabicNumber, int firstNumber, int secondNumber, String operation) throws RomanNumberOperationDoNotExist {
         switch (operation) {
             case "add":
                 arabicNumber += (firstNumber + secondNumber);
@@ -50,11 +56,13 @@ public class RomanNumber {
             case "subtract":
                 arabicNumber += Math.abs(firstNumber - secondNumber);
                 break;
+            default:
+                throw new RomanNumberOperationDoNotExist();
         }
         return arabicNumber;
     }
 
-    private static int convertSingleDigitToArabicNumber(String romanNumber) throws Exception {
+    private static int convertSingleDigitToArabicNumber(String romanNumber) throws RomanNumberDoNotExist {
         switch (romanNumber) {
             case "I":
                 return 1;
@@ -70,8 +78,10 @@ public class RomanNumber {
                 return 50;
             case "M":
                 return 1000;
+            default:
+                throw new RomanNumberDoNotExist();
         }
-        throw new Exception("the number do not exist");
+
     }
 
 }

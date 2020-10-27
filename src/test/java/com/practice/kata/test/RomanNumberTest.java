@@ -1,6 +1,6 @@
 package com.practice.kata.test;
 
-import com.practice.kata.RomanNumber;
+import com.practice.kata.romannumbers.RomanNumber;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
