@@ -1,9 +1,7 @@
 package com.practice.kata;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 public class RomanNumber {
 
@@ -17,37 +15,43 @@ public class RomanNumber {
     }
 
     public static int operateDigit(String romanNumber) throws Exception {
-        LinkedList<String> separateRomanNumber = new LinkedList<String>(Arrays.asList(romanNumber.split("")));
+        LinkedList<String> separateRomanNumber = romanNumberToLinkedList(romanNumber);
         int arabicNumber = 0;
-        int firstNumber = 0;
-        int secondNumber = 0;
-        while (separateRomanNumber.size() != 0){
-            firstNumber = 0;
-            secondNumber = 0;
-            if(separateRomanNumber.size() == 1){
+        while (separateRomanNumber.size() != 0) {
+            int firstNumber = 0;
+            int secondNumber = 0;
+            if (separateRomanNumber.size() == 1) {
                 firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
-                arabicNumber+= (firstNumber + secondNumber);
+                arabicNumber = operateArabicNumber(arabicNumber, firstNumber, secondNumber, "add");
                 break;
             }
             firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
-            if(separateRomanNumber != null){
+            if (separateRomanNumber != null) {
                 secondNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
             }
             if (firstNumber >= secondNumber) {
-                arabicNumber+= (firstNumber + secondNumber);
-            }else {
-                arabicNumber+= Math.abs(firstNumber - secondNumber);
+                arabicNumber = operateArabicNumber(arabicNumber, firstNumber, secondNumber, "add");
+            } else {
+                arabicNumber = operateArabicNumber(arabicNumber, firstNumber, secondNumber, "subtract");
             }
         }
         return arabicNumber;
     }
 
-    private static boolean isValid(List<String> separateRomanNumber, int index) throws Exception {
-        if ((index + 1 < separateRomanNumber.size())) {
-            return true;
-        } else {
-            return false;
+    private static LinkedList<String> romanNumberToLinkedList(String romanNumber) {
+        return new LinkedList<String>(Arrays.asList(romanNumber.split("")));
+    }
+
+    private static int operateArabicNumber(int arabicNumber, int firstNumber, int secondNumber, String operation) {
+        switch (operation) {
+            case "add":
+                arabicNumber += (firstNumber + secondNumber);
+                break;
+            case "subtract":
+                arabicNumber += Math.abs(firstNumber - secondNumber);
+                break;
         }
+        return arabicNumber;
     }
 
     private static int convertSingleDigitToArabicNumber(String romanNumber) throws Exception {
