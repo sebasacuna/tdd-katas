@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id "org.sonarqube" version "3.0"
 }
 
 group 'org.practice'
@@ -56,33 +55,6 @@ jacocoTestCoverageVerification {
                 value = 'TOTALCOUNT'
                 maximum = 0.3
             }
-        }
-    }
-}
-
-sonarqube {
-    properties {
-
-        properties {
-            property "sonar.sourceEncoding", "UTF-8"
-            property "sonar.host.url", "https://sonarcloud.io"
-            property "sonar.projectKey","sebasacuna_tdd-katas"
-            property "sonar.projectName", "tdd-katas"
-            property "sonar.java.source", "1.8"
-            property "sonar.organization", "Sebastian"
-            property "sonar.java.coveragePlugin", "jacoco"
-            property "sonar.tests", "src/test"
-            property "sonar.java.test.binaries", "build/classes/java/test"
-            property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
-
-        }
-    }
-}
-
-subprojects {
-    sonarqube {
-        properties {
-            property "sonar.sources", "src"
         }
     }
 }
