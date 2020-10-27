@@ -66,7 +66,7 @@ sonarqube {
         properties {
             property "sonar.sourceEncoding", "UTF-8"
             property "sonar.host.url", "https://sonarcloud.io"
-            property "sonar.projectKey","elangiosonar"
+            property "sonar.projectKey","sebasacuna_tdd-katas"
             property "sonar.projectName", "tdd-katas"
             property "sonar.java.source", "1.8"
             property "sonar.organization", "Sebastian"
