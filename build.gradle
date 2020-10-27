@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id "org.sonarqube" version "3.0"
 }
 
 group 'org.practice'
@@ -55,6 +56,20 @@ jacocoTestCoverageVerification {
                 value = 'TOTALCOUNT'
                 maximum = 0.3
             }
+        }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}
+
+subprojects {
+    sonarqube {
+        properties {
+            property "sonar.sources", "src"
         }
     }
 }
