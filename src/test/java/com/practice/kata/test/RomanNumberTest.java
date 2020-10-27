@@ -1,13 +1,14 @@
 package com.practice.kata.test;
 
 import com.practice.kata.romannumbers.RomanNumber;
-import org.junit.jupiter.api.Assertions;
+import com.practice.kata.romannumbers.exceptions.RomanNumberDoNotExist;
+import com.practice.kata.romannumbers.exceptions.RomanNumberOperationDoNotExist;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RomanNumberTest {
+
 
     @Test
     public void junitWorks() {
@@ -36,7 +37,7 @@ public class RomanNumberTest {
 
     @Test()
     public void convertWrongRomanNumberToArabicNumber() {
-        Assertions.assertThrows(Exception.class, () -> RomanNumber.convertToArabicNumber("U"));
+        assertThrows(Exception.class, () -> RomanNumber.convertToArabicNumber("U"));
 
     }
 
@@ -83,6 +84,31 @@ public class RomanNumberTest {
         assertEquals(38, RomanNumber.operateDigit("XXXVIII"));
     }
 
+    @Test()
+    public void forceThrowRomanNumberOperationDoNotExist() {
+
+        Exception exception = assertThrows(RomanNumberOperationDoNotExist.class, () -> {
+            RomanNumber.operateArabicNumber(0, 1, 2, "BAD_OPERATION");
+        });
+
+        String expectedMessage = "operation do not exist";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test()
+    public void convertSingleDigitToArabicNumber()  {
+
+        Exception exception = assertThrows(RomanNumberDoNotExist.class, () -> {
+            RomanNumber.convertSingleDigitToArabicNumber("P");
+        });
+
+        String expectedMessage = "the number do not exist";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 
 
 }

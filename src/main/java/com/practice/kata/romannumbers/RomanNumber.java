@@ -48,7 +48,7 @@ public class RomanNumber {
         return new LinkedList<>(Arrays.asList(romanNumber.split("")));
     }
 
-    private static int operateArabicNumber(int arabicNumber, int firstNumber, int secondNumber, String operation) throws RomanNumberOperationDoNotExist {
+    public static int operateArabicNumber(int arabicNumber, int firstNumber, int secondNumber, String operation) throws RomanNumberOperationDoNotExist {
         switch (operation) {
             case "add":
                 arabicNumber += (firstNumber + secondNumber);
@@ -62,7 +62,7 @@ public class RomanNumber {
         return arabicNumber;
     }
 
-    private static int convertSingleDigitToArabicNumber(String romanNumber) throws RomanNumberDoNotExist {
+    public static int convertSingleDigitToArabicNumber(String romanNumber) throws RomanNumberDoNotExist {
         switch (romanNumber) {
             case "I":
                 return 1;
