@@ -4,7 +4,7 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
 
 ##### Katas Todo
 
-- [ ] Roman Numbers
+- [x] Roman Numbers
 
 ##### Tips
 

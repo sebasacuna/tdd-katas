@@ -12,12 +12,11 @@ public class RomanNumber {
     }
 
     public static int convertToArabicNumber(String romanNumber) throws RomanNumberDoNotExist, RomanNumberOperationDoNotExist {
-        if (romanNumber.length() == 1) {
-            return convertSingleDigitToArabicNumber(romanNumber);
-        } else if (romanNumber.length() > 1) {
+        if (romanNumber.length() > 0) {
             return operateDigit(romanNumber);
+        } else {
+            return 0;
         }
-        return 0;
     }
 
     public static int operateDigit(String romanNumber) throws RomanNumberDoNotExist, RomanNumberOperationDoNotExist {
@@ -26,12 +25,9 @@ public class RomanNumber {
         while (!separateRomanNumber.isEmpty()) {
             int firstNumber = 0;
             int secondNumber = 0;
-            if (separateRomanNumber.size() == 1) {
+            if (!separateRomanNumber.isEmpty()) {
                 firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
-                arabicNumber = operateArabicNumber(arabicNumber, firstNumber, secondNumber, "add");
-                break;
             }
-            firstNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
             if (!separateRomanNumber.isEmpty()) {
                 secondNumber = convertSingleDigitToArabicNumber(separateRomanNumber.pop());
             }
