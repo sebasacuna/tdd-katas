@@ -11,4 +11,5 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
 
 ##### Tips
 
+
 If you want to see the commit history you can use tools like **Sourcetree** (very clear in the moment of see commit history) or **GitHub Desktop**
