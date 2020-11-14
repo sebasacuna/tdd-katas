@@ -4,7 +4,7 @@ jdk:
 before_script:
   - chmod 777 gradlew
 script:
-  - ./gradlew build
-  - ./gradlew jacocoTestReport
+  - gradle build
+  - gradle jacocoTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)
