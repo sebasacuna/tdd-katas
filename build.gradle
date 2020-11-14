@@ -8,7 +8,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'com.palantir.jacoco-coverage'
+apply plugin: 'com.palantir.jacoco-full-report'
 
 group 'org.practice'
 version '1.0-SNAPSHOT'
@@ -47,34 +47,11 @@ task codeCoverageReport(type: JacocoReport) {
     }
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled = true
-        html.enabled = true
-        html.destination file("${buildDir}/jacocoHtml")
-    }
+jacocoCoverage {
+    // Enforce minimum code coverage of 50% for every Java file.
+    fileThreshold 0.7
 }
 
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.8
-            }
-        }
 
-        rule {
-            enabled = false
-            element = 'CLASS'
-            includes = ['org.gradle.*']
-
-            limit {
-                counter = 'LINE'
-                value = 'TOTALCOUNT'
-                maximum = 0.3
-            }
-        }
-    }
-}
 
 check.dependsOn jacocoTestReport
