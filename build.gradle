@@ -1,14 +1,9 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.palantir:jacoco-coverage:0.4.0'
-    }
+plugins {
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.6.3'
 }
 
 apply plugin: 'java'
-apply plugin: 'com.palantir.jacoco-full-report'
 
 group 'org.practice'
 version '1.0-SNAPSHOT'
@@ -17,41 +12,19 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
-}
-
-jacoco {
-    toolVersion = "0.8.5"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
 }
 
-jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
 }
 
-task codeCoverageReport(type: JacocoReport) {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
-
+jacocoTestReport {
     reports {
-        xml.enabled true
-        xml.destination file("${buildDir}/reports/jacoco/report.xml")
-        html.enabled false
-        csv.enabled false
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
     }
 }
-
-jacocoCoverage {
-    // Enforce minimum code coverage of 50% for every Java file.
-    fileThreshold 0.7
-}
-
-
-
-check.dependsOn jacocoTestReport
