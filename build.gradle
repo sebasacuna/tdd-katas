@@ -26,6 +26,15 @@ jacocoTestReport {
         xml.enabled = true // coveralls plugin depends on xml format report
         html.enabled = true
     }
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    'com/practice/kata/Main.class',
+                    'com/practice/kata/Main.java'
+            ])
+        })
+    }
+
 }
 
 check.dependsOn jacocoTestReport
