@@ -1,12 +1,11 @@
-plugins {
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.6.3'
-}
-
+apply plugin: 'jacoco'
 apply plugin: 'java'
 
 group 'org.practice'
 version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -28,3 +27,5 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+check.dependsOn jacocoTestReport
