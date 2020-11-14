@@ -1,7 +1,7 @@
 # # tdd-katas
 
 ### code coverages
-[![Code Coverage](https://img.shields.io/codecov/c/github/pvorb/property-providers/develop.svg)](https://codecov.io/github/pvorb/property-providers?branch=main)
+[![Code Coverage](https://img.shields.io/codecov/c/github/sebasacuna/tdd-katas/main.svg)](https://codecov.io/github/sebasacuna/tdd-katas?branch=main)
 
 This is a evolutionary repository to practice tdd-katas, you can se the evolution of the code in the commits.
 
