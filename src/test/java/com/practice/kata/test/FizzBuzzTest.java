@@ -25,7 +25,7 @@ public class FizzBuzzTest {
     class FizzBuzzMethod {
 
         @ParameterizedTest(name = "For example, number {0} ")
-        @ValueSource(ints = {3,6})
+        @ValueSource(ints = {3,6,9,12})
         public void shouldReturnFizzIfNumberIsMultipleOfThree(Integer number) throws Exception {
 
             String expected = "Fizz";
