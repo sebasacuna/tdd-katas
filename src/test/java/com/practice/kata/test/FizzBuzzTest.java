@@ -1,5 +1,6 @@
 package com.practice.kata.test;
 
+import com.practice.kata.fizzbuzz.FizzBuzz;
 import com.practice.kata.test.config.ReplaceGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -23,13 +24,13 @@ public class FizzBuzzTest {
     @DisplayNameGeneration(ReplaceGenerator.ReplaceCamelCase.class)
     class FizzBuzzMethod {
 
-        @ParameterizedTest
-        @ValueSource(ints = {})
+        @ParameterizedTest(name = "For example, number {0} ")
+        @ValueSource(ints = {3})
         public void shouldReturnFizzIfNumberIsMultipleOfThree(Integer number) throws Exception {
 
             String expected = "Fizz";
 
-            String actual = FizzBuzz.fizzBuzz();
+            String actual = FizzBuzz.fizzBuzz(number);
 
             assertEquals(expected, actual);
         }
