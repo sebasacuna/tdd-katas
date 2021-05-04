@@ -36,7 +36,7 @@ public class FizzBuzzTest {
         }
 
         @ParameterizedTest(name = "For example, number {0} ")
-        @ValueSource(ints = {5,10,15,20})
+        @ValueSource(ints = {5,10,20})
         public void shouldReturnBuzzIfNumberIsMultipleOfFive(Integer number) throws Exception {
 
             String expected = "Buzz";
@@ -51,6 +51,16 @@ public class FizzBuzzTest {
         public void shouldReturnFizzBuzzIfNumberIsMultipleOfFiveAndThree(Integer number) throws Exception {
 
             String expected = "FizzBuzz";
+
+            String actual = FizzBuzz.fizzBuzz(number);
+
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        public void shouldReturnTwo(Integer number) throws Exception {
+
+            String expected = "2";
 
             String actual = FizzBuzz.fizzBuzz(number);
 
