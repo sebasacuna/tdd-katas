@@ -8,6 +8,7 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
 
 - [x] Roman Numbers
 - [x] Fizz and Buzz
+    * If number is multiple of three and five return FizzBuzz
     * If number is multiple of three return Fizz
     * If number is multiple of five return Buzz
     * Otherwise return the number
