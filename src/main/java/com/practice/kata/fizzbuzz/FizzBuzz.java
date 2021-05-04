@@ -16,7 +16,7 @@ public class FizzBuzz {
             return "Fizz";
         }
 
-        return "2";
+        return String.valueOf(number);
     }
 
     private static boolean numberIsMultipleOfThree(Integer number) {
