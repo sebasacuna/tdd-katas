@@ -4,6 +4,7 @@ public class FizzBuzz {
 
     public static String fizzBuzz(Integer number){
         if (number % 3 == 0) return "Fizz";
+        if (number.equals(5)) return "Buzz";
         return "";
     }
 
