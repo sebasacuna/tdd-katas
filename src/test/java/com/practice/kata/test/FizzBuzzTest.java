@@ -58,11 +58,11 @@ public class FizzBuzzTest {
         }
 
         @Test
-        public void shouldReturnTwo(Integer number) throws Exception {
+        public void shouldReturnTwo() throws Exception {
 
             String expected = "2";
 
-            String actual = FizzBuzz.fizzBuzz(number);
+            String actual = FizzBuzz.fizzBuzz(2);
 
             assertEquals(expected, actual);
         }

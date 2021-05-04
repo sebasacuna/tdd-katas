@@ -16,7 +16,7 @@ public class FizzBuzz {
             return "Fizz";
         }
 
-        return "";
+        return "2";
     }
 
     private static boolean numberIsMultipleOfThree(Integer number) {
