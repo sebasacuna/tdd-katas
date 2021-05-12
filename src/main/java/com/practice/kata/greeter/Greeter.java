@@ -22,7 +22,21 @@ public class Greeter {
             return "Good Morning ".concat(finalName);
         }
 
+        if (itsEvening(this.time)){
+            return "Good Evening ".concat(finalName);
+        }
+
         return "Hello ".concat(finalName);
+    }
+
+    private boolean itsEvening(LocalTime time) {
+
+        LocalTime eveningStart = LocalTime.of(EIGHTEEN_HOUR, ZERO_MINUTES);
+
+        LocalTime eveningEnds = LocalTime.of(TWENYTWO_HOUR, ZERO_MINUTES);
+
+        return time.isAfter(eveningStart) && time.isBefore(eveningEnds);
+
     }
 
     private boolean itsMorning(LocalTime time) {
