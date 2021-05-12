@@ -26,6 +26,10 @@ public class Greeter {
             return "Good Evening ".concat(finalName);
         }
 
+        if (itsNight(this.time)){
+            return "Good Night ".concat(finalName);
+        }
+
         return "Hello ".concat(finalName);
     }
 
@@ -46,6 +50,25 @@ public class Greeter {
         LocalTime morningEnds = LocalTime.of(TWELVE_HOUR, ZERO_MINUTES);
 
         return time.isAfter(morningStart) && time.isBefore(morningEnds);
+    }
+
+    private boolean itsNight(LocalTime time) {
+
+        LocalTime nightStart = LocalTime.of(TWENYTWO_HOUR, ZERO_MINUTES);
+
+        LocalTime peakOfNight = LocalTime.of(23, LocalTime.MAX.getMinute(), LocalTime.MAX.getSecond(), LocalTime.MAX.getSecond());
+
+        LocalTime nightEnds = LocalTime.of(SIX_HOUR, ZERO_MINUTES);
+
+        if(time.isAfter(nightStart) && time.isBefore(peakOfNight)){
+            return true;
+        }
+
+        if(time.isAfter(LocalTime.MIDNIGHT) && time.isBefore(nightEnds)){
+            return true;
+        }
+
+        return false;
     }
 
     private String upperCaseFirstLetter(String name) {
