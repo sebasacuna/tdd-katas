@@ -48,6 +48,17 @@ public class GreeterTest {
             assertEquals(expected, actual);
         }
 
+        @ParameterizedTest(name = "For example, name {0} ")
+        @ValueSource(strings = {"sebastian "," nicolas"})
+        public void shouldReturnTheResultWithTheFirstLetterCapitalizes(String name) throws Exception {
+
+            String expected = "Hello Sebastian";
+
+            String actual = Greeter.greet(name);
+
+            assertEquals(expected, actual);
+        }
+
     }
 
 }

@@ -15,6 +15,7 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
 - [x] Greeter
     * Write a Greeter class with greet function that receives a name as input and outputs Hello <name>. The signature of greet should not change throughout the kata. You are allowed to construct Greeter object as you please.
     * Greet trims the input
+    * Greet capitalizes the first letter of the name
 ##### Tips
 
 If you want to see the commit history you can use tools like **Sourcetree** (very clear in the moment of see commit history) or **GitHub Desktop**
