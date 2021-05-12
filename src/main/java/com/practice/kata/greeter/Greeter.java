@@ -9,4 +9,8 @@ public class Greeter {
 
     private LocalTime time;
 
+    public static String greet(){
+        return "Hello Sebastian";
+    }
+
 }
