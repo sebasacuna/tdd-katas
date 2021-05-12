@@ -10,7 +10,7 @@ public class Greeter {
     private LocalTime time;
 
     public static String greet(String name){
-        return "Hello ".concat(name);
+        return "Hello ".concat(name.trim());
     }
 
 }
