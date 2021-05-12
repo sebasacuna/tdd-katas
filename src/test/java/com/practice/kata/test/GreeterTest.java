@@ -30,7 +30,9 @@ public class GreeterTest {
 
             String expected = "Hello Sebastian";
 
-            String actual = Greeter.greet();
+            String name = "Sebastian";
+
+            String actual = Greeter.greet(name);
 
             assertEquals(expected, actual);
         }

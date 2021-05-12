@@ -9,8 +9,8 @@ public class Greeter {
 
     private LocalTime time;
 
-    public static String greet(){
-        return "Hello Sebastian";
+    public static String greet(String name){
+        return "Hello ".concat(name);
     }
 
 }
