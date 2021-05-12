@@ -35,7 +35,9 @@ public class GreeterTest {
 
             String name = "Sebastian";
 
-            String actual = Greeter.greet(name);
+            Greeter greeter = new Greeter(LocalTime.of(18,0));
+
+            String actual = greeter.greet(name);
 
             assertEquals(expected, actual);
         }
@@ -46,7 +48,9 @@ public class GreeterTest {
 
             String expected = "Hello Sebastian";
 
-            String actual = Greeter.greet(name);
+            Greeter greeter = new Greeter(LocalTime.of(18,0));
+
+            String actual = greeter.greet(name);
 
             assertEquals(expected, actual);
         }
@@ -61,7 +65,9 @@ public class GreeterTest {
 
             String expected = "Hello ".concat(name);
 
-            String actual = Greeter.greet(name);
+            Greeter greeter = new Greeter(LocalTime.of(18,0));
+
+            String actual = greeter.greet(name);
 
             assertEquals(expected, actual);
         }
@@ -78,7 +84,7 @@ public class GreeterTest {
 
             String expected = "Good Morning ".concat(name);
 
-            String actual = Greeter.greet(name);
+            String actual = greeter.greet(name);
 
             assertEquals(expected, actual);
         }
