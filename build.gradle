@@ -36,6 +36,7 @@ jacocoTestReport {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
                     'com/practice/kata/Main.class',
+                    'com/practice/kata/greeter/Constants.class',
                     'com/practice/kata/Main.java'
             ])
         })
