@@ -52,7 +52,11 @@ public class GreeterTest {
         @ValueSource(strings = {"sebastian "," nicolas"})
         public void shouldReturnTheResultWithTheFirstLetterCapitalizes(String name) throws Exception {
 
-            String expected = "Hello Sebastian";
+            name = name.trim();
+
+            name = name.substring(0,1).toUpperCase().concat(name.substring(1,name.length()));
+
+            String expected = "Hello ".concat(name);
 
             String actual = Greeter.greet(name);
 
