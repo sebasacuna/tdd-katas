@@ -18,6 +18,7 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
     * Greet capitalizes the first letter of the name
     * Greet returns Good morning <name> when the time is 06:00-12:00
     * Greet returns Good evening <name> when the time is 18:00-22:00
+    * Greet returns Good night <name> when the time is 22:00-06:00
 ##### Tips
 
 If you want to see the commit history you can use tools like **Sourcetree** (very clear in the moment of see commit history) or **GitHub Desktop**

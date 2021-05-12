@@ -106,6 +106,23 @@ public class GreeterTest {
             assertEquals(expected, actual);
         }
 
+        @ParameterizedTest(name = "For example, name {0} ")
+        @ValueSource(strings = {"sebastian "," nicolas"})
+        public void shouldReturnGoodNightNameWhenItsTwenytwoToSix(String name) throws Exception {
+
+            name = name.trim();
+
+            name = name.substring(0,1).toUpperCase().concat(name.substring(1,name.length()));
+
+            Greeter greeter = new Greeter(LocalTime.of(23,30));
+
+            String expected = "Good Night ".concat(name);
+
+            String actual = greeter.greet(name);
+
+            assertEquals(expected, actual);
+        }
+
     }
 
 }
