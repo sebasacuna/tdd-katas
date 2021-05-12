@@ -12,6 +12,8 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
     * If number is multiple of three return Fizz
     * If number is multiple of five return Buzz
     * Otherwise return the number
+- [x] Greeter
+    * Write a Greeter class with greet function that receives a name as input and outputs Hello <name>. The signature of greet should not change throughout the kata. You are allowed to construct Greeter object as you please.
 
 ##### Tips
 
