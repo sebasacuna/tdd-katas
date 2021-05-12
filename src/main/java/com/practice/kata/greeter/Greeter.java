@@ -22,11 +22,11 @@ public class Greeter {
             return "Good Morning ".concat(finalName);
         }
 
-        if (itsEvening(this.time)){
+        if (itsEvening(this.time)) {
             return "Good Evening ".concat(finalName);
         }
 
-        if (itsNight(this.time)){
+        if (itsNight(this.time)) {
             return "Good Night ".concat(finalName);
         }
 
@@ -60,11 +60,11 @@ public class Greeter {
 
         LocalTime nightEnds = LocalTime.of(SIX_HOUR, ZERO_MINUTES);
 
-        if(time.isAfter(nightStart) && time.isBefore(peakOfNight)){
+        if (time.isAfter(nightStart) && time.isBefore(peakOfNight)) {
             return true;
         }
 
-        if(time.isAfter(LocalTime.MIDNIGHT) && time.isBefore(nightEnds)){
+        if (time.isAfter(LocalTime.MIDNIGHT) && time.isBefore(nightEnds)) {
             return true;
         }
 
