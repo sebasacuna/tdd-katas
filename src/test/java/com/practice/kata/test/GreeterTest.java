@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -57,6 +60,23 @@ public class GreeterTest {
             name = name.substring(0,1).toUpperCase().concat(name.substring(1,name.length()));
 
             String expected = "Hello ".concat(name);
+
+            String actual = Greeter.greet(name);
+
+            assertEquals(expected, actual);
+        }
+
+        @ParameterizedTest(name = "For example, name {0} ")
+        @ValueSource(strings = {"sebastian "," nicolas"})
+        public void shouldReturnGoodMorningNameWhenItsSixToTwelve(String name) throws Exception {
+
+            name = name.trim();
+
+            name = name.substring(0,1).toUpperCase().concat(name.substring(1,name.length()));
+
+            Greeter greeter = new Greeter(LocalTime.of(7,30));
+
+            String expected = "Good Morning ".concat(name);
 
             String actual = Greeter.greet(name);
 

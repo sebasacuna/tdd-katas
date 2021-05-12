@@ -1,10 +1,12 @@
 package com.practice.kata.greeter;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalTime;
 
 @Data
+@AllArgsConstructor
 public class Greeter {
 
     private LocalTime time;
