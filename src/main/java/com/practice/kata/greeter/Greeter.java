@@ -17,4 +17,13 @@ public class Greeter {
         return "Hello ".concat(finalName);
     }
 
+    private static String upperCaseFirstLetter(String name){
+
+        String firstLetterWithUpperCase = name.substring(0,1).toUpperCase();
+
+        String nameWithOutFirstLetter = name.substring(1,name.length());
+
+        return firstLetterWithUpperCase.concat(nameWithOutFirstLetter);
+    }
+
 }
