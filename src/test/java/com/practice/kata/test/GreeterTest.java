@@ -37,6 +37,17 @@ public class GreeterTest {
             assertEquals(expected, actual);
         }
 
+        @ParameterizedTest(name = "For example, name {0} ")
+        @ValueSource(strings = {"Sebastian "," Sebastian"})
+        public void shouldReturnTheResultTrim(String name) throws Exception {
+
+            String expected = "Hello Sebastian";
+
+            String actual = Greeter.greet(name);
+
+            assertEquals(expected, actual);
+        }
+
     }
 
 }
