@@ -5,29 +5,40 @@ import lombok.Data;
 
 import java.time.LocalTime;
 
+import static com.practice.kata.greeter.Constants.*;
+
 @Data
 @AllArgsConstructor
 public class Greeter {
 
     private LocalTime time;
 
-    public String greet(String name){
+    public String greet(String name) {
 
         String finalName = name.trim();
-        finalName = finalName.substring(0,1).toUpperCase().concat(finalName.substring(1,finalName.length()));
+        finalName = upperCaseFirstLetter(finalName);
 
-        if(this.time.isAfter(LocalTime.of(6,0)) && this.time.isBefore(LocalTime.of(12,0))){
+        if (itsMorning(this.time)) {
             return "Good Morning ".concat(finalName);
         }
 
         return "Hello ".concat(finalName);
     }
 
-    private String upperCaseFirstLetter(String name){
+    private boolean itsMorning(LocalTime time) {
 
-        String firstLetterWithUpperCase = name.substring(0,1).toUpperCase();
+        LocalTime morningStart = LocalTime.of(SIX_HOUR, ZERO_MINUTES);
 
-        String nameWithOutFirstLetter = name.substring(1,name.length());
+        LocalTime morningEnds = LocalTime.of(TWELVE_HOUR, ZERO_MINUTES);
+
+        return time.isAfter(morningStart) && time.isBefore(morningEnds);
+    }
+
+    private String upperCaseFirstLetter(String name) {
+
+        String firstLetterWithUpperCase = name.substring(0, 1).toUpperCase();
+
+        String nameWithOutFirstLetter = name.substring(1, name.length());
 
         return firstLetterWithUpperCase.concat(nameWithOutFirstLetter);
     }
