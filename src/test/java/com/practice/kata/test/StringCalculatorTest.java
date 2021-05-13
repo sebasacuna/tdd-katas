@@ -1,5 +1,6 @@
 package com.practice.kata.test;
 
+import com.practice.kata.stringcalculator.StringCalculator;
 import com.practice.kata.test.config.ReplaceGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
