@@ -4,7 +4,16 @@ public class StringCalculator {
 
 
     public Integer add(String operations){
-        return 0;
+
+        if(isEmpty(operations) ){
+            return 0;
+        }
+
+        return null;
+    }
+
+    public boolean isEmpty(String operations){
+        return operations == null || operations.equals("");
     }
 
 }
