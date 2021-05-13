@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,6 +32,19 @@ public class StringCalculatorTest {
             StringCalculator stringCalculator = new StringCalculator();
 
             Integer actual = stringCalculator.add("");
+
+            assertEquals(expected, actual);
+        }
+
+        @ParameterizedTest(name = "For example, name {0} ")
+        @ValueSource(strings = {"23", "54", "34", "12"})
+        public void shouldReturnTheNumberWhenTheOperationOnlyHaveNumbers(String operation) throws Exception {
+
+            Integer expected = Integer.valueOf(operation);
+
+            StringCalculator stringCalculator = new StringCalculator();
+
+            Integer actual = stringCalculator.add(operation);
 
             assertEquals(expected, actual);
         }
