@@ -8,6 +8,9 @@ public class StringCalculator {
         if(isEmpty(operations) ){
             return 0;
         }
+        if(!isEmpty(operations)){
+            return Integer.valueOf(operations);
+        }
 
         return null;
     }
