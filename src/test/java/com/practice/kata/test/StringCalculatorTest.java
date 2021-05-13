@@ -36,9 +36,22 @@ public class StringCalculatorTest {
             assertEquals(expected, actual);
         }
 
-        @ParameterizedTest(name = "For example, name {0} ")
+        @ParameterizedTest(name = "For example, number {0} ")
         @ValueSource(strings = {"23", "54", "34", "12"})
         public void shouldReturnTheNumberWhenTheOperationOnlyHaveNumbers(String operation) throws Exception {
+
+            Integer expected = Integer.valueOf(operation);
+
+            StringCalculator stringCalculator = new StringCalculator();
+
+            Integer actual = stringCalculator.add(operation);
+
+            assertEquals(expected, actual);
+        }
+
+        @ParameterizedTest(name = "For example, number {0} ")
+        @ValueSource(strings = {"1,2", "20,3", "50,8", "70,10"})
+        public void shouldReturnTheSumWhenHaveTwoNumberDelimitedWithComma(String operation) throws Exception {
 
             Integer expected = Integer.valueOf(operation);
 

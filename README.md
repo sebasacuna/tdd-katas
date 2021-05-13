@@ -21,7 +21,8 @@ This is a evolutionary repository to practice tdd-katas, you can se the evolutio
   * Greet returns Good night <name> when the time is 22:00-06:00
 - [ ] String Calculator (Write a method add under an object StringCalculator that, given a delimited string, returns the sum of the numbers in the string.)
   * An empty string return zero `""=> 0`
-
+  * A single number returns the value `'1' => 1 ` `'2' => 2`
+  * Two numbers, comma delimited, returns the sum `'1,2' => 3` `10,20 => 30`
 ##### Tips
 
 If you want to see the commit history you can use tools like **Sourcetree** (very clear in the moment of see commit history) or **GitHub Desktop**
